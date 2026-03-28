@@ -485,6 +485,67 @@
     </div>
   </section>
 
+  <section class="enquiry-section" id="enquiry">
+    <div class="container">
+      <div class="section-title">
+        <span>Student Enquiry</span>
+        <h3>Talk to Our Admission Team</h3>
+        <p>Fill out the form below and our team will contact you with course details, fees, class timings, and enrollment guidance.</p>
+      </div>
+      <div class="enquiry-grid">
+        <div class="enquiry-info">
+          <h4>Why Enquire with Nexvora?</h4>
+          <p>We help students choose the right diploma program based on their background, career goals, and skill level.</p>
+          <ul class="info-points">
+            <li>✔ Free career counseling and course guidance</li>
+            <li>✔ Online classes with practical learning roadmap</li>
+            <li>✔ International-certified diploma structure</li>
+            <li>✔ Beginner to advanced training support</li>
+            <li>✔ Career-focused advice for job-ready skills</li>
+          </ul>
+        </div>
+
+        <div class="enquiry-form">
+          <h4>Student Enquiry Form</h4>
+          <p>Submit your details and we’ll get in touch soon.</p>
+          <form>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your mobile number" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label>Select Course</label>
+                <select required>
+                  <option value="">Choose a course</option>
+                  <option>Diploma in Cloud Computing</option>
+                  <option>Diploma in Full Stack Development</option>
+                  <option>Diploma in Data Analytics</option>
+                  <option>DevOps & Cyber Security</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label>Your Message</label>
+                <textarea placeholder="Tell us what you want to learn or ask about course fees, duration, or classes..."></textarea>
+              </div>
+              <div class="form-group full">
+                <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="enroll">
     <div class="container">
       <div class="cta">
@@ -535,5 +596,156 @@
       © 2025 Nexvora Academy. All Rights Reserved.
     </div>
   </footer>
+  <style>
+    .mobile-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-size: 26px;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .enquiry-section {
+      background: linear-gradient(180deg, #eef7fb 0%, #f8fcff 100%);
+    }
+    .enquiry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    .enquiry-info, .enquiry-form {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .enquiry-info h4, .enquiry-form h4 {
+      font-size: 30px;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .enquiry-info p, .enquiry-form p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .info-points {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .info-points li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--light);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #fbfdff;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(41,184,215,0.12);
+    }
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    @media (max-width: 980px) {
+      .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 4%;
+        right: 4%;
+        background: rgba(255,255,255,0.98);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        border-radius: 24px;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        display: none;
+      }
+      .nav-links.show { display: flex; }
+      .enquiry-grid, .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script>
+    const mobileToggle = document.createElement('button');
+    mobileToggle.className = 'mobile-toggle';
+    mobileToggle.innerHTML = '☰';
+    document.querySelector('nav').appendChild(mobileToggle);
+
+    const navLinks = document.querySelector('.nav-links');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      mobileToggle.innerHTML = navLinks.classList.contains('show') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        mobileToggle.innerHTML = '☰';
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('section, .feature, .course-card, .cert-box, .cta, .banner, .enquiry-info, .enquiry-form').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
