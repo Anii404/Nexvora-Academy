@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexvora Academy | Learn Technology. Build Your Career.</title>
+  <style>
+    :root {
+      --primary: #17315f;
+      --secondary: #29b8d7;
+      --accent: #63d6d0;
+      --dark: #0d1b34;
+      --light: #f4f9fc;
+      --white: #ffffff;
+      --text: #23324a;
+      --muted: #6b7a90;
+      --border: rgba(23, 49, 95, 0.12);
+      --shadow: 0 20px 60px rgba(23, 49, 95, 0.12);
+      --radius: 22px;
+      --gradient: linear-gradient(135deg, #17315f 0%, #1d4c8f 35%, #29b8d7 70%, #63d6d0 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f7fbff 0%, #eef7fb 100%);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, 92%); margin: auto; }
+
+    .topbar {
+      background: var(--dark);
+      color: #d9e8ff;
+      font-size: 14px;
+      padding: 10px 0;
+    }
+    .topbar .container {
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.92);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo-wrap {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-wrap img { width: 58px; height: 58px; object-fit: contain; }
+    .brand h1 {
+      font-size: 26px; color: var(--primary); line-height: 1; letter-spacing: 0.4px;
+    }
+    .brand p {
+      color: var(--muted); font-size: 13px; letter-spacing: 2px; margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex; gap: 24px; align-items: center; font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--secondary); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 24px; border-radius: 999px; font-weight: 700;
+      transition: 0.3s ease; border: none; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gradient); color: var(--white); box-shadow: var(--shadow);
+    }
+    .btn-primary:hover { transform: translateY(-3px); }
+    .btn-outline {
+      border: 2px solid var(--secondary); color: var(--primary); background: transparent;
+    }
+    .btn-outline:hover { background: rgba(41,184,215,0.08); }
+
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 80px 0 70px;
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border-radius: 50%; filter: blur(40px); opacity: 0.25;
+    }
+    .hero::before {
+      width: 340px; height: 340px; background: #63d6d0; top: -80px; right: -100px;
+    }
+    .hero::after {
+      width: 280px; height: 280px; background: #29b8d7; bottom: -100px; left: -60px;
+    }
+
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-block; padding: 10px 16px; border-radius: 999px;
+      background: rgba(41,184,215,0.12); color: var(--primary); font-weight: 700; margin-bottom: 18px;
+    }
+    .hero h2 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.08; color: var(--dark); margin-bottom: 18px;
+    }
+    .hero h2 span {
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px; color: var(--muted); max-width: 640px; margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: var(--shadow);
+      border-radius: 30px;
+      padding: 28px;
+      position: relative;
+    }
+    .hero-card::before {
+      content: ""; position: absolute; inset: 0; border-radius: 30px; padding: 1px;
+      background: linear-gradient(135deg, rgba(41,184,215,0.25), rgba(23,49,95,0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .hero-card img { width: 120px; margin: 0 auto 18px; }
+    .hero-card h3 { font-size: 28px; color: var(--primary); text-align: center; }
+    .hero-card p { text-align: center; color: var(--muted); margin: 8px 0 20px; }
+    .stats {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px;
+    }
+    .stat {
+      background: var(--light); padding: 18px; border-radius: 18px; text-align: center;
+    }
+    .stat h4 { font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    section { padding: 80px 0; }
+    .section-title {
+      text-align: center; max-width: 760px; margin: 0 auto 50px;
+    }
+    .section-title span {
+      color: var(--secondary); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-size: 14px;
+    }
+    .section-title h3 {
+      font-size: clamp(30px, 4vw, 46px); color: var(--dark); margin: 10px 0 14px;
+    }
+    .section-title p { color: var(--muted); font-size: 17px; }
+
+    .features {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+    }
+    .feature {
+      background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
+      border: 1px solid var(--border); transition: 0.3s ease;
+    }
+    .feature:hover { transform: translateY(-8px); }
+    .feature .icon {
+      width: 58px; height: 58px; border-radius: 18px; background: rgba(41,184,215,0.12);
+      display: grid; place-items: center; font-size: 28px; margin-bottom: 16px;
+    }
+    .feature h4 { color: var(--primary); margin-bottom: 10px; font-size: 22px; }
+    .feature p { color: var(--muted); }
+
+    .courses-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+    }
+    .course-card {
+      background: var(--white); border-radius: 28px; padding: 32px; box-shadow: var(--shadow); border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .course-card::after {
+      content: ""; position: absolute; top: 0; right: 0; width: 140px; height: 140px;
+      background: linear-gradient(135deg, rgba(41,184,215,0.18), rgba(99,214,208,0.06));
+      border-bottom-left-radius: 100%;
+    }
+    .course-card h4 { font-size: 28px; color: var(--primary); margin-bottom: 12px; }
+    .course-card p { color: var(--muted); margin-bottom: 18px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+    .tag {
+      padding: 8px 14px; border-radius: 999px; background: rgba(23,49,95,0.07); color: var(--primary); font-size: 14px; font-weight: 700;
+    }
+    .course-card ul { list-style: none; display: grid; gap: 10px; }
+    .course-card li::before {
+      content: "✔"; color: var(--secondary); font-weight: bold; margin-right: 10px;
+    }
+
+    .banner {
+      background: var(--gradient); color: var(--white); border-radius: 34px; padding: 50px; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center;
+    }
+    .banner h3 { font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin-bottom: 12px; }
+    .banner p { opacity: 0.95; font-size: 18px; }
+    .banner .btn { background: var(--white); color: var(--primary); }
+
+    .cert-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+    }
+    .cert-box {
+      background: var(--white); padding: 28px; border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border);
+    }
+    .cert-box h4 { color: var(--primary); margin-bottom: 10px; font-size: 22px; }
+    .cert-box p { color: var(--muted); }
+
+    .cta {
+      text-align: center; background: var(--white); border-radius: 34px; padding: 60px 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+    }
+    .cta h3 { font-size: clamp(30px, 4vw, 50px); color: var(--dark); margin-bottom: 14px; }
+    .cta p { color: var(--muted); max-width: 700px; margin: 0 auto 24px; font-size: 18px; }
+
+    footer {
+      background: var(--dark); color: #dce6f7; margin-top: 80px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 28px; padding: 60px 0 30px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .footer-logo img { width: 60px; }
+    footer h4 { color: var(--white); margin-bottom: 16px; }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer li { color: #bfd2f0; }
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.08); text-align: center; padding: 18px 0; color: #9eb5d6;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .banner, .features, .courses-grid, .cert-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links { display: none; }
+      .hero { padding-top: 50px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 38px; }
+      .section-title h3 { font-size: 32px; }
+      .brand h1 { font-size: 22px; }
+      .topbar .container { justify-content: center; text-align: center; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .course-card, .feature, .cert-box, .hero-card, .cta, .banner { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div>🌐 International Certified IT Diploma Programs</div>
+      <div>📞 +91 98765 43210 | ✉️ info@nexvoraacademy.com</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo-wrap">
+          <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
+          <div class="brand">
+            <h1>NEXVORA</h1>
+            <p>ACADEMY</p>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#certification">Certification</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Premium Online IT Career Institute</div>
+        <h2>Build Your Future in <span>Cloud, Coding, Data & Security</span></h2>
+        <p>Nexvora Academy delivers job-oriented, international-certified diploma programs designed to help students and professionals master real-world IT skills and launch successful technology careers.</p>
+        <div class="hero-actions">
+          <a href="#courses" class="btn btn-primary">Explore Courses</a>
+          <a href="#contact" class="btn btn-outline">Book Free Demo</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Brand">
+        <h3>Nexvora Academy</h3>
+        <p>Learn Technology. Build Your Career.</p>
+        <div class="stats">
+          <div class="stat">
+            <h4>6+</h4>
+            <span>Career Programs</span>
+          </div>
+          <div class="stat">
+            <h4>100%</h4>
+            <span>Practical Learning</span>
+          </div>
+          <div class="stat">
+            <h4>Live</h4>
+            <span>Project Training</span>
+          </div>
+          <div class="stat">
+            <h4>Global</h4>
+            <span>Skill Standards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <span>Why Nexvora</span>
+        <h3>Career-Focused IT Education for the Modern World</h3>
+        <p>We train students from fundamentals to advanced industry skills with practical labs, live projects, certification support, and career-oriented learning paths.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="icon">☁️</div>
+          <h4>Cloud Ready</h4>
+          <p>Master modern cloud infrastructure, deployment, and administration with hands-on practical learning.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">💻</div>
+          <h4>Full Stack Skills</h4>
+          <p>Learn frontend, backend, APIs, databases, and real development workflows from scratch.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📊</div>
+          <h4>Data Analytics</h4>
+          <p>Build data-driven thinking using Python, SQL, Excel, dashboards, and analytical problem solving.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🛡️</div>
+          <h4>Future Expansion</h4>
+          <p>Upskill with DevOps and Cyber Security knowledge to stay ready for international tech opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="container">
+      <div class="section-title">
+        <span>Our Programs</span>
+        <h3>Professional Diploma Courses</h3>
+        <p>Designed to help beginners and career switchers gain practical, industry-relevant skills for high-demand IT roles.</p>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card">
+          <h4>Diploma in Cloud Computing</h4>
+          <p>A complete infrastructure and cloud-focused program built for students who want strong IT foundations and modern cloud career skills.</p>
+          <div class="tag-row">
+            <span class="tag">Infrastructure</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Server Admin</span>
+          </div>
+          <ul>
+            <li>Hardware fundamentals and troubleshooting</li>
+            <li>Operating Systems: Windows, Linux, Ubuntu</li>
+            <li>Server concepts and administration basics</li>
+            <li>Networking fundamentals and IP addressing</li>
+            <li>CCNA 200-301 concepts and routing/switching</li>
+            <li>AWS cloud services and deployment basics</li>
+            <li>Microsoft Azure cloud fundamentals</li>
+            <li>Virtualization, cloud architecture, and much more</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <h4>Diploma in Full Stack Development</h4>
+          <p>Learn how to design, build, and deploy complete web applications with frontend, backend, and database technologies.</p>
+          <div class="tag-row">
+            <span class="tag">Frontend</span>
+            <span class="tag">Backend</span>
+            <span class="tag">Database</span>
+            <span class="tag">Projects</span>
+          </div>
+          <ul>
+            <li>HTML5, CSS3, Responsive Web Design</li>
+            <li>JavaScript and modern web fundamentals</li>
+            <li>Frontend development with UI building concepts</li>
+            <li>Backend development and server-side logic</li>
+            <li>Database design and integration</li>
+            <li>Authentication, APIs, and deployment basics</li>
+            <li>Real projects and portfolio development</li>
+            <li>Professional coding practices and much more</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <h4>Diploma in Data Analytics</h4>
+          <p>Build practical data skills for reporting, visualization, and business insights using modern tools and analytical methods.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Dashboards</span>
+          </div>
+          <ul>
+            <li>Excel for data handling and reporting</li>
+            <li>SQL for database queries and analysis</li>
+            <li>Python for analytics and automation</li>
+            <li>Data cleaning and transformation</li>
+            <li>Visualization and dashboard creation</li>
+            <li>Business reporting and decision support</li>
+            <li>Mini projects and analytics case studies</li>
+            <li>Practical job-oriented data workflow training</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <h4>DevOps & Cyber Security Add-On Tracks</h4>
+          <p>Boost your career with high-value technical add-ons that align with global job market trends and modern infrastructure needs.</p>
+          <div class="tag-row">
+            <span class="tag">DevOps</span>
+            <span class="tag">Security</span>
+            <span class="tag">Tools</span>
+            <span class="tag">Career Growth</span>
+          </div>
+          <ul>
+            <li>DevOps fundamentals and CI/CD concepts</li>
+            <li>Version control and automation basics</li>
+            <li>Linux and deployment workflow understanding</li>
+            <li>Cyber security fundamentals and best practices</li>
+            <li>Network security awareness and threat basics</li>
+            <li>System hardening and security hygiene</li>
+            <li>Practical security mindset for IT professionals</li>
+            <li>Industry-relevant exposure and much more</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="banner">
+        <div>
+          <h3>International-Certified Learning Paths for Real IT Careers</h3>
+          <p>Our courses are structured to help learners gain practical confidence, technical clarity, and strong career-ready skills aligned with international learning standards.</p>
+        </div>
+        <div>
+          <a href="#enroll" class="btn">Apply for Admission</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certification">
+    <div class="container">
+      <div class="section-title">
+        <span>Certification & Benefits</span>
+        <h3>Why Students Choose Nexvora Academy</h3>
+        <p>Our programs are designed not just to teach theory, but to prepare students for the real demands of the IT industry.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-box">
+          <h4>International-Oriented Curriculum</h4>
+          <p>Course structure aligned with modern technology roles and globally relevant practical skill expectations.</p>
+        </div>
+        <div class="cert-box">
+          <h4>Practical + Live Project Learning</h4>
+          <p>Hands-on labs, projects, and guided implementation to ensure you can apply what you learn.</p>
+        </div>
+        <div class="cert-box">
+          <h4>Career & Placement Support</h4>
+          <p>Resume guidance, interview preparation, and career development support to help you move forward professionally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="enroll">
+    <div class="container">
+      <div class="cta">
+        <h3>Start Your Tech Journey with Nexvora Academy</h3>
+        <p>Join our premium online diploma programs and build practical skills in Cloud Computing, Full Stack Development, Data Analytics, DevOps, and Cyber Security.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="#contact" class="btn btn-primary">Enroll Now</a>
+          <a href="tel:+919876543210" class="btn btn-outline">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
+          <div>
+            <h4 style="margin-bottom: 0;">Nexvora Academy</h4>
+            <p style="color:#9eb5d6;">Learn Technology. Build Your Career.</p>
+          </div>
+        </div>
+        <p>Professional online IT education institute offering practical, career-focused diploma programs in cloud, development, analytics, and modern infrastructure technologies.</p>
+      </div>
+
+      <div>
+        <h4>Popular Courses</h4>
+        <ul>
+          <li>Diploma in Cloud Computing</li>
+          <li>Diploma in Full Stack Development</li>
+          <li>Diploma in Data Analytics</li>
+          <li>DevOps & Cyber Security</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Info</h4>
+        <ul>
+          <li>📍 Indore, Madhya Pradesh, India</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ info@nexvoraacademy.com</li>
+          <li>🌐 www.nexvoraacademy.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Nexvora Academy. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
