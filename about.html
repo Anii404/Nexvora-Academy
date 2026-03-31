@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Nexvora Academy</title>
+  <meta name="description" content="Learn about Nexvora Academy, our mission, vision, career-focused IT diploma programs, and why students choose us for cloud computing, full stack development, and data analytics training." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #183b6b;
+      --secondary: #2bb7d8;
+      --accent: #0f172a;
+      --light: #f4fbff;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #dbeafe;
+      --shadow: 0 18px 45px rgba(24, 59, 107, 0.12);
+      --max: 1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:#f8fcff;color:var(--text);line-height:1.7}
+    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+    .container{width:min(92%,var(--max));margin:auto} section{padding:88px 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:999px;font-weight:700;transition:.3s ease;border:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:var(--white);box-shadow:var(--shadow)}
+    .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}.btn:hover{transform:translateY(-3px)}
+    .section-title{text-align:center;margin-bottom:50px}.section-title span{display:inline-block;color:var(--secondary);font-weight:700;margin-bottom:10px;text-transform:uppercase;font-size:13px}.section-title h2{font-size:clamp(30px,5vw,46px);color:var(--primary);margin-bottom:14px;line-height:1.15}.section-title p{max-width:760px;margin:auto;color:var(--muted);font-size:16px}
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(219,234,254,.8)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;position:relative}.logo-wrap{display:flex;align-items:center;gap:14px}.logo-wrap img{width:58px;height:58px;object-fit:contain;border-radius:16px;background:#fff;padding:4px}.brand-text h1{font-size:22px;color:var(--primary);line-height:1}.brand-text p{font-size:12px;color:var(--muted);margin-top:6px}.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{color:var(--accent);font-weight:600}.mobile-toggle{display:none;width:48px;height:48px;border-radius:14px;border:1px solid var(--border);background:var(--white);font-size:26px;color:var(--primary);cursor:pointer}
+    .hero{padding:90px 0 70px;background:radial-gradient(circle at top right, rgba(43,183,216,.18), transparent 26%), radial-gradient(circle at top left, rgba(24,59,107,.12), transparent 28%), linear-gradient(180deg,#ffffff 0%,#eef8fd 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center}.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(43,183,216,.12);color:var(--secondary);padding:10px 18px;border-radius:999px;font-weight:700;margin-bottom:20px;font-size:14px}.hero h2{font-size:clamp(38px,6vw,60px);line-height:1.08;color:var(--primary);margin-bottom:18px}.hero h2 span{color:var(--secondary)}.hero p{color:var(--muted);font-size:17px;margin-bottom:26px}.hero-actions{display:flex;flex-wrap:wrap;gap:16px}.hero-panel{background:linear-gradient(145deg,#183b6b,#2bb7d8);border-radius:34px;padding:36px;color:var(--white);box-shadow:0 25px 60px rgba(24,59,107,.25)}.hero-panel h3{font-size:32px;margin-bottom:14px}.hero-panel ul{list-style:none;display:grid;gap:12px;margin-top:18px}.hero-panel li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 16px;font-weight:600}
+    .grid-2,.why-grid,.values-grid,.footer-grid,.stats-grid{display:grid;gap:24px}.grid-2{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:repeat(3,1fr)}.values-grid{grid-template-columns:repeat(4,1fr)}.stats-grid{grid-template-columns:repeat(4,1fr)}.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}
+    .card,.stat-card{background:var(--white);border:1px solid var(--border);border-radius:28px;padding:30px;box-shadow:var(--shadow)} .card h3,.stat-card h3{color:var(--primary);margin-bottom:12px}.card p,.stat-card p{color:var(--muted)}
+    .cta-banner{background:linear-gradient(135deg,rgba(24,59,107,.97),rgba(43,183,216,.95));color:var(--white);border-radius:34px;padding:52px;box-shadow:var(--shadow);text-align:center}.cta-banner h2{font-size:clamp(30px,5vw,48px);margin-bottom:14px}.cta-banner p{max-width:780px;margin:auto;color:rgba(255,255,255,.88)}
+    footer{background:#0f172a;color:#dbe4f0;padding:80px 0 30px;margin-top:30px} footer h4{color:var(--white);margin-bottom:18px;font-size:20px} footer p,footer li,footer a{color:#cbd5e1;font-size:15px} footer ul{list-style:none;display:grid;gap:12px}.footer-brand img{width:62px;height:62px;border-radius:16px;margin-bottom:16px;background:#fff;padding:4px}.footer-bottom{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:#94a3b8;font-size:14px}
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease, transform .8s ease}.reveal.active{opacity:1;transform:translateY(0)}
+    @media (max-width:1100px){.hero-grid,.grid-2,.why-grid,.values-grid,.footer-grid,.stats-grid{grid-template-columns:1fr 1fr}.hero-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:860px){section{padding:70px 0}.mobile-toggle{display:inline-flex;align-items:center;justify-content:center}.nav-links{position:absolute;top:100%;left:4%;right:4%;background:rgba(255,255,255,.98);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:24px;padding:20px;flex-direction:column;align-items:flex-start;gap:16px;display:none}.nav-links.show{display:flex}.grid-2,.why-grid,.values-grid,.footer-grid,.stats-grid{grid-template-columns:1fr}.hero h2{font-size:38px}.cta-banner{padding:34px}}
+  /* Floating Contact Buttons */
+.floating-contact-buttons {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 9999;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transition: 0.3s ease;
+  animation: floatPulse 2.2s infinite;
+  min-width: 155px;
+}
+
+.float-btn span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.float-btn small {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.call-btn {
+  background: linear-gradient(135deg, #183b6b, #2bb7d8);
+}
+
+.float-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.24);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-contact-buttons {
+    right: 14px;
+    bottom: 16px;
+    gap: 12px;
+  }
+
+  .float-btn {
+    padding: 12px 16px;
+    min-width: 138px;
+  }
+
+  .float-btn span {
+    font-size: 20px;
+  }
+
+  .float-btn small {
+    font-size: 13px;
+  }
+}
+  </style>
+</head>
+<body>
+  <header><div class="container"><nav><a href="index.html" class="logo-wrap"><img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo"><div class="brand-text"><h1>Nexvora Academy</h1><p>Learn Technology. Build Your Career.</p></div></a><div class="nav-links"><a href="index.html">Home</a><a href="#about">About</a><a href="#why">Why Us</a><a href="#programs">Programs</a><a href="#contact">Contact</a></div></nav></div></header>
+
+  <section class="hero" id="about"><div class="container"><div class="hero-grid"><div class="reveal"><div class="hero-badge">🚀 About Nexvora Academy</div><h2>We Help Students Build <span>Real IT Skills for Real Careers</span></h2><p>Nexvora Academy is a career-focused online education institute created to help students learn practical, modern, and job-relevant technology skills in a clear and structured way.</p><p>Our goal is simple: instead of confusing students with random internet tutorials, we provide roadmap-based diploma programs that help learners understand what to study, why to study it, and how to use it in the real world.</p><div class="hero-actions"><a href="#programs" class="btn btn-primary">Explore Programs</a><a href="index.html#enquiry" class="btn btn-outline">Enquire Now</a></div></div><div class="hero-panel reveal"><h3>What We Focus On</h3><ul><li>Career-Oriented IT Diploma Programs</li><li>Beginner-Friendly Structured Learning</li><li>Practical Skills with Industry Roadmaps</li><li>Project-Based Understanding</li><li>Confidence Building for Students</li><li>Modern Technology Career Preparation</li></ul></div></div></div></section>
+
+  <section><div class="container"><div class="section-title reveal"><span>Who We Are</span><h2>A Modern Learning Platform for Future IT Professionals</h2><p>Nexvora Academy is built for students who want to enter the technology field with confidence. We believe students should not only memorize topics — they should understand how technology works and how it connects to real career opportunities.</p></div><div class="grid-2"><div class="card reveal"><h3>Our Mission</h3><p>Our mission is to make practical technology education simple, affordable, career-focused, and understandable for students who want to build a strong future in IT, software, cloud, analytics, and modern digital skills.</p></div><div class="card reveal"><h3>Our Vision</h3><p>Our vision is to create a trusted academy brand where students can learn in-demand technology skills with clarity, confidence, and a roadmap that actually helps them move toward employment and growth.</p></div></div></div></section>
+
+  <section><div class="container"><div class="section-title reveal"><span>Student Value</span><h2>Why Students Need Structured IT Learning Today</h2><p>Many students want to build a career in technology, but they often feel lost because they do not know where to start. That is why structured learning matters.</p></div><div class="grid-2"><div class="card reveal"><h3>The Problem Students Face</h3><p>Most students jump between YouTube videos, short tutorials, and random internet content. This creates confusion, incomplete knowledge, and a weak learning foundation.</p></div><div class="card reveal"><h3>How Nexvora Helps</h3><p>We break complex technical fields into easy-to-understand learning paths so students can progress step by step without feeling overwhelmed.</p></div></div></div></section>
+
+  <section id="why"><div class="container"><div class="section-title reveal"><span>Why Choose Us</span><h2>What Makes Nexvora Academy Different</h2><p>We are building Nexvora Academy around practical value, student clarity, and career-focused skill development — not just topic lists.</p></div><div class="why-grid"><div class="card reveal"><h3>Beginner-Friendly Approach</h3><p>Our courses are designed in a way that even beginners can understand the roadmap and learn with confidence.</p></div><div class="card reveal"><h3>Practical Career Focus</h3><p>We focus on skills that are useful in jobs, projects, internships, freelancing, and future career growth.</p></div><div class="card reveal"><h3>Roadmap-Based Learning</h3><p>Students learn step by step in the correct sequence instead of getting confused by random topics.</p></div><div class="card reveal"><h3>Modern Technology Skills</h3><p>We teach high-value domains that are relevant in today's IT and software industry.</p></div><div class="card reveal"><h3>Real Understanding</h3><p>We explain why students are learning each topic, not just what the topic name is.</p></div><div class="card reveal"><h3>Growth-Oriented Vision</h3><p>Our goal is to help students build strong foundations that support long-term success.</p></div></div></div></section>
+
+  <section><div class="container"><div class="section-title reveal"><span>Our Core Values</span><h2>The Principles Behind Nexvora Academy</h2><p>We want Nexvora Academy to stand for meaningful learning, clarity, and student growth.</p></div><div class="values-grid"><div class="card reveal"><h3>Clarity</h3><p>We simplify technical learning.</p></div><div class="card reveal"><h3>Practicality</h3><p>We teach skills with real-world relevance.</p></div><div class="card reveal"><h3>Confidence</h3><p>We help students grow from beginner to capable.</p></div><div class="card reveal"><h3>Career Focus</h3><p>We align learning with future opportunities.</p></div></div></div></section>
+
+  <section id="programs"><div class="container"><div class="section-title reveal"><span>Programs</span><h2>Our Diploma Programs</h2><p>Nexvora Academy offers structured diploma programs designed to help students build in-demand technical skills in fast-growing domains.</p></div><div class="why-grid"><div class="card reveal"><h3>Diploma in Cloud Computing</h3><p>Learn hardware, operating systems, networking, CCNA 200-301, server concepts, Linux, Python, AWS, Azure, and cloud fundamentals with a practical roadmap.</p><a href="cloud-computing.html" class="btn btn-primary" style="margin-top:18px;">View Course</a></div><div class="card reveal"><h3>Diploma in Full Stack Development</h3><p>Learn computer basics, frontend technologies, backend concepts, databases, Git, GitHub, APIs, projects, and developer workflow in a structured path.</p><a href="full-stack.html" class="btn btn-primary" style="margin-top:18px;">View Course</a></div><div class="card reveal"><h3>Diploma in Data Analytics</h3><p>Learn Excel, SQL, Python, data cleaning, reporting, visualization, dashboards, and analytics thinking for business and technical growth.</p><a href="data-analytics.html" class="btn btn-primary" style="margin-top:18px;">View Course</a></div></div></div></section>
+
+  <section><div class="container"><div class="section-title reveal"><span>What We Aim To Build</span><h2>More Than a Course — A Career Direction</h2><p>Nexvora Academy is not just about teaching technical topics. It is about helping students build direction, confidence, and a clear path toward a stronger future in technology.</p></div><div class="stats-grid"><div class="stat-card reveal"><h3>Structured Learning</h3><p>Students learn in a clear step-by-step format.</p></div><div class="stat-card reveal"><h3>Modern Domains</h3><p>Courses are aligned with current technology trends.</p></div><div class="stat-card reveal"><h3>Career Readiness</h3><p>Programs are designed to support future opportunities.</p></div><div class="stat-card reveal"><h3>Skill Growth</h3><p>Focus on building confidence and practical understanding.</p></div></div></div></section>
+
+  <section><div class="container"><div class="cta-banner reveal"><h2>Start Learning with Nexvora Academy</h2><p>If you want to build your future in cloud computing, software development, or data analytics, Nexvora Academy is designed to give you a strong and practical starting point.</p><div style="margin-top:24px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;"><a href="index.html#enquiry" class="btn btn-primary">Enquire for Admission</a><a href="index.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Back to Homepage</a></div></div></div></section>
+
+  <footer id="contact"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo"><h4>Nexvora Academy</h4><p>Learn practical IT skills through structured diploma programs designed for real career growth.</p></div><div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="#about">About</a></li><li><a href="#why">Why Us</a></li><li><a href="#programs">Programs</a></li></ul></div><div><h4>Programs</h4><ul><li><a href="cloud-computing.html">Cloud Computing</a></li><li><a href="full-stack.html">Full Stack Development</a></li><li><a href="data-analytics.html">Data Analytics</a></li><li><a href="index.html#courses">More Courses</a></li></ul></div><div><h4>Contact</h4><ul><li>Email: admissions@nexvoraacademy.com</li><li>Online Learning Platform</li><li>Admissions & Course Guidance</li><li>DM for Enrollment Details</li></ul></div></div><div class="footer-bottom">© 2026 Nexvora Academy. All Rights Reserved.</div></div></footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    const mobileToggle = document.createElement('button');
+    mobileToggle.className = 'mobile-toggle';
+    mobileToggle.innerHTML = '☰';
+    nav.appendChild(mobileToggle);
+    const navLinks = document.querySelector('.nav-links');
+    mobileToggle.addEventListener('click',()=>{navLinks.classList.toggle('show');mobileToggle.innerHTML=navLinks.classList.contains('show')?'✕':'☰';});
+    document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('show');mobileToggle.innerHTML='☰';});});
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('active');});},{threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+  <!-- Floating WhatsApp + Call Buttons -->
+<div class="floating-contact-buttons">
+  <a href="https://wa.me/917024964489?text=Hello%20Nexvora%20Academy%2C%20I%20want%20to%20know%20about%20your%20courses." 
+     class="float-btn whatsapp-btn" 
+     target="_blank" 
+     aria-label="Chat on WhatsApp">
+    <span>💬</span>
+    <small>WhatsApp</small>
+  </a>
+
+  <a href="tel:+917024964489" 
+     class="float-btn call-btn" 
+     aria-label="Call Now">
+    <span>📞</span>
+    <small>Call Now</small>
+  </a>
+</div>
+</body>
+</html>

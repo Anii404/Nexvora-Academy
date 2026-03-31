@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diploma in Full Stack Development | Nexvora Academy</title>
+  <meta name="description" content="Explore the Diploma in Full Stack Development at Nexvora Academy. Learn computer basics, frontend, backend, databases, Git, GitHub, APIs, deployment, and real projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #183b6b;
+      --secondary: #2bb7d8;
+      --accent: #0f172a;
+      --light: #f4fbff;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #dbeafe;
+      --shadow: 0 18px 45px rgba(24, 59, 107, 0.12);
+      --radius: 24px;
+      --max: 1200px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f8fcff; color: var(--text); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(92%, var(--max)); margin: auto; }
+    section { padding: 88px 0; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 999px; font-weight: 700; transition: 0.3s ease; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--white); box-shadow: var(--shadow); }
+    .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+    .btn:hover { transform: translateY(-3px); }
+
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .section-title span { display: inline-block; color: var(--secondary); font-weight: 700; margin-bottom: 10px; text-transform: uppercase; font-size: 13px; }
+    .section-title h2 { font-size: clamp(30px, 5vw, 46px); color: var(--primary); margin-bottom: 14px; line-height: 1.15; }
+    .section-title p { max-width: 760px; margin: auto; color: var(--muted); font-size: 16px; }
+
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(219,234,254,0.8); }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; position: relative; }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; }
+    .logo-wrap img { width: 58px; height: 58px; object-fit: contain; border-radius: 16px; background: #fff; padding: 4px; }
+    .brand-text h1 { font-size: 22px; color: var(--primary); line-height: 1; }
+    .brand-text p { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { color: var(--accent); font-weight: 600; }
+    .mobile-toggle { display: none; width: 48px; height: 48px; border-radius: 14px; border: 1px solid var(--border); background: var(--white); font-size: 26px; color: var(--primary); cursor: pointer; }
+
+    .hero { padding: 90px 0 70px; background: radial-gradient(circle at top right, rgba(43,183,216,0.18), transparent 26%), radial-gradient(circle at top left, rgba(24,59,107,0.12), transparent 28%), linear-gradient(180deg, #ffffff 0%, #eef8fd 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 42px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(43,183,216,0.12); color: var(--secondary); padding: 10px 18px; border-radius: 999px; font-weight: 700; margin-bottom: 20px; font-size: 14px; }
+    .hero h2 { font-size: clamp(38px, 6vw, 60px); line-height: 1.08; color: var(--primary); margin-bottom: 18px; }
+    .hero h2 span { color: var(--secondary); }
+    .hero p { color: var(--muted); font-size: 17px; margin-bottom: 26px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+    .hero-panel { background: linear-gradient(145deg, #183b6b, #2bb7d8); border-radius: 34px; padding: 36px; color: var(--white); box-shadow: 0 25px 60px rgba(24,59,107,0.25); }
+    .hero-panel h3 { font-size: 32px; margin-bottom: 14px; }
+    .hero-panel ul { list-style: none; display: grid; gap: 12px; margin-top: 18px; }
+    .hero-panel li { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 14px 16px; font-weight: 600; }
+
+    .overview-grid, .career-grid, .footer-grid { display: grid; gap: 24px; }
+    .overview-grid { grid-template-columns: repeat(4,1fr); }
+    .career-grid { grid-template-columns: repeat(3,1fr); }
+    .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+
+    .overview-card, .career-card, .module-card { background: var(--white); border: 1px solid var(--border); border-radius: 28px; padding: 28px; box-shadow: var(--shadow); }
+    .overview-card h3, .career-card h3, .module-card h3 { color: var(--primary); margin-bottom: 12px; }
+    .overview-card p, .career-card p, .module-card p { color: var(--muted); }
+
+    .module-section { background: linear-gradient(180deg,#f8fcff 0%,#eef7fb 100%); }
+    .module-stack { display: grid; gap: 22px; }
+    .module-card { padding: 34px; }
+    .module-card .module-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 18px; flex-wrap: wrap; }
+    .module-number { padding: 10px 16px; border-radius: 999px; background: rgba(43,183,216,0.12); color: var(--secondary); font-weight: 700; }
+    .module-card h3 { font-size: 30px; }
+    .module-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 18px; }
+    .module-box { background: var(--light); border-radius: 22px; padding: 22px; }
+    .module-box h4 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+    .module-box ul { padding-left: 18px; color: var(--text); display: grid; gap: 8px; }
+
+    .cta-banner { background: linear-gradient(135deg, rgba(24,59,107,0.97), rgba(43,183,216,0.95)); color: var(--white); border-radius: 34px; padding: 52px; box-shadow: var(--shadow); text-align: center; }
+    .cta-banner h2 { font-size: clamp(30px, 5vw, 48px); margin-bottom: 14px; }
+    .cta-banner p { max-width: 780px; margin: auto; color: rgba(255,255,255,0.88); }
+
+    footer { background: #0f172a; color: #dbe4f0; padding: 80px 0 30px; margin-top: 30px; }
+    footer h4 { color: var(--white); margin-bottom: 18px; font-size: 20px; }
+    footer p, footer li, footer a { color: #cbd5e1; font-size: 15px; }
+    footer ul { list-style: none; display: grid; gap: 12px; }
+    .footer-brand img { width: 62px; height: 62px; border-radius: 16px; margin-bottom: 16px; background: #fff; padding: 4px; }
+    .footer-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #94a3b8; font-size: 14px; }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .overview-grid, .career-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      section { padding: 70px 0; }
+      .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links { position: absolute; top: 100%; left: 4%; right: 4%; background: rgba(255,255,255,0.98); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 24px; padding: 20px; flex-direction: column; align-items: flex-start; gap: 16px; display: none; }
+      .nav-links.show { display: flex; }
+      .overview-grid, .career-grid, .module-columns, .footer-grid { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 38px; }
+      .module-card h3 { font-size: 26px; }
+      .cta-banner { padding: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo-wrap">
+          <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
+          <div class="brand-text">
+            <h1>Nexvora Academy</h1>
+            <p>Learn Technology. Build Your Career.</p>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#modules">Syllabus</a>
+          <a href="#careers">Careers</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="hero-badge">💻 Diploma Program | Full Stack Development</div>
+          <h2>Learn to Build <span>Real Websites, Web Apps & Developer Projects</span></h2>
+          <p>This diploma is designed for students who want to start from the basics and grow into complete web developers. Students will learn how websites are created, how frontend and backend work together, how databases store data, and how modern developers build real projects.</p>
+          <p>The course is structured like a roadmap, so students can understand each step clearly instead of getting confused by random technologies on the internet.</p>
+          <div class="hero-actions">
+            <a href="#modules" class="btn btn-primary">View Full Syllabus</a>
+            <a href="#contact" class="btn btn-outline">Enquire Now</a>
+          </div>
+        </div>
+        <div class="hero-panel reveal">
+          <h3>What You Will Learn</h3>
+          <ul>
+            <li>Computer Basics & Developer Setup</li>
+            <li>HTML, CSS, JavaScript & Frontend Design</li>
+            <li>Responsive Web Development</li>
+            <li>Backend Concepts with Python & Java</li>
+            <li>Database & Full Stack Workflow</li>
+            <li>Git, GitHub, APIs & Developer Tools</li>
+            <li>Projects, Deployment & Career Roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Course Overview</span>
+        <h2>Why Full Stack Development is a Powerful Career Skill</h2>
+        <p>Today companies do not only want students who know one language. They want developers who understand how a full website or application works — from the design users see to the backend logic and database running behind it.</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card reveal"><h3>Beginner Friendly</h3><p>This diploma starts from computer basics, so even students from non-coding backgrounds can understand the roadmap clearly.</p></div>
+        <div class="overview-card reveal"><h3>Industry Relevant</h3><p>Students learn the technologies and workflow that are commonly used in modern web development projects.</p></div>
+        <div class="overview-card reveal"><h3>Project Based</h3><p>Instead of only theory, students learn by building practical pages, forms, websites, and real-world mini applications.</p></div>
+        <div class="overview-card reveal"><h3>Career Focused</h3><p>The course is designed to prepare students for internships, junior developer roles, freelancing, and future specialization.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section" id="modules">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Detailed Syllabus</span>
+        <h2>Complete Full Stack Development Roadmap</h2>
+        <p>This roadmap is written in a student-friendly way so learners can understand not only what they will study, but also why each part is important in becoming a modern developer.</p>
+      </div>
+
+      <div class="module-stack">
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 1</span><h3>Computer Basics for Developers</h3></div>
+          <p>Before learning coding, students should first understand how a computer system works, how files are managed, how software is installed, and how developers use systems in daily work. This creates confidence and reduces confusion in the beginning stage.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Start Here?</h4><ul><li>Helps complete beginners feel comfortable with the technical environment</li><li>Builds confidence before starting coding</li><li>Creates a base for tools, software, and project workflow</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>Computer basics and system understanding</li><li>Files, folders, extensions, and storage</li><li>Software installation and browser setup</li><li>VS Code introduction and developer workspace</li><li>Typing practice and productivity basics</li><li>How developers work on projects</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 2</span><h3>Internet, Websites & How the Web Works</h3></div>
+          <p>Students often start coding without understanding what a website actually is. This module explains domains, hosting, browsers, client-server communication, and how websites are delivered to users.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Learn This?</h4><ul><li>Builds conceptual clarity before coding websites</li><li>Helps students understand how frontend and backend connect</li><li>Makes future learning easier and more practical</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What is a website and web application</li><li>Domain, hosting, browser, and server basics</li><li>HTTP/HTTPS overview</li><li>Client vs Server understanding</li><li>Static vs Dynamic websites</li><li>Introduction to deployment thinking</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 3</span><h3>Frontend Development Roadmap</h3></div>
+          <p>Frontend is the part of the website that users can see and interact with. It is responsible for layout, design, buttons, forms, text, images, responsiveness, and user experience. A strong frontend makes a project attractive and usable.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Frontend Languages & Why They Matter</h4><ul><li><strong>HTML</strong> – gives structure to the webpage</li><li><strong>CSS</strong> – makes the website beautiful and responsive</li><li><strong>JavaScript</strong> – adds interactivity and dynamic behavior</li><li><strong>Bootstrap / UI Concepts</strong> – speeds up modern design work</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>HTML tags, forms, tables, semantic structure</li><li>CSS styling, colors, spacing, layouts, positioning</li><li>Flexbox, Grid, media queries, responsive design</li><li>JavaScript basics, DOM, events, conditions, loops</li><li>Interactive forms, buttons, sliders, and UI behavior</li><li>Landing pages and multi-section website building</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 4</span><h3>Advanced Frontend & Modern UI Thinking</h3></div>
+          <p>Modern developers are expected to build clean, mobile-friendly, professional-looking interfaces. This module helps students move from basic code to polished project-level frontend development.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why It Matters</h4><ul><li>Students can create projects that look professional</li><li>Improves portfolio quality for internships and jobs</li><li>Helps in freelancing and client work</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>Website section planning and layout design</li><li>Responsive navigation and hero sections</li><li>Cards, forms, footers, testimonials, and CTAs</li><li>Animations and transitions</li><li>Portfolio and business website structure</li><li>Mini frontend project building</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 5</span><h3>Backend Development Introduction</h3></div>
+          <p>Frontend alone is not enough for modern applications. Backend development is what makes websites intelligent. It handles data processing, login systems, business logic, APIs, user actions, and communication with the database.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Backend is Important</h4><ul><li>Without backend, most modern applications cannot function properly</li><li>Needed for login systems, forms, dashboards, and data handling</li><li>Very important for real-world projects and job readiness</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What backend means in web development</li><li>Server-side logic and request-response flow</li><li>How frontend sends data to backend</li><li>How forms and applications process user input</li><li>Introduction to APIs and data exchange</li><li>How backend connects with database</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 6</span><h3>Backend Languages & Developer Path</h3></div>
+          <p>Students should understand that backend can be built using different languages. In this diploma, students are introduced to popular backend pathways so they understand the ecosystem and can choose a strong future specialization.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Languages Covered</h4><ul><li><strong>Python</strong> – beginner-friendly and widely used</li><li><strong>Java</strong> – powerful for enterprise applications</li><li><strong>JavaScript Backend Concepts</strong> – important for full stack understanding</li><li>Framework awareness for real development growth</li></ul></div>
+            <div class="module-box"><h4>What Students Understand</h4><ul><li>Why different companies use different backend stacks</li><li>How backend languages solve business problems</li><li>How developers choose the right technology</li><li>How coding logic becomes a real web application</li><li>How backend supports scalability and project architecture</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 7</span><h3>Python for Web Development Basics</h3></div>
+          <p>Python is one of the easiest and most practical programming languages for beginners. It helps students build coding confidence and understand logic that can later be used in backend development, automation, APIs, and even data-related applications.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Learn Python?</h4><ul><li>Easy to understand for beginners</li><li>Useful in backend, automation, and data fields</li><li>Improves coding logic and confidence</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>Variables, data types, operators</li><li>Conditions, loops, and functions</li><li>Lists, dictionaries, tuples</li><li>Input/output and file basics</li><li>Logic-building exercises</li><li>Beginner-friendly coding practice</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 8</span><h3>Java Backend Awareness</h3></div>
+          <p>Java is widely used in enterprise development and large-scale systems. Even if students do not become Java specialists immediately, understanding its role helps them know how professional backend environments work.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Learn Java Awareness?</h4><ul><li>Helps students understand enterprise development</li><li>Useful for comparing backend technologies</li><li>Improves broader technical understanding</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What Java is and where it is used</li><li>How backend applications are structured</li><li>Java logic and object-oriented mindset overview</li><li>Enterprise backend awareness</li><li>Framework path understanding for future growth</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 9</span><h3>Database Fundamentals</h3></div>
+          <p>A real application is incomplete without a database. Databases store user information, forms, products, login details, records, and all important application data. Every serious developer should understand how data is stored and managed.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Database is Important</h4><ul><li>Required for almost every real web application</li><li>Important for login systems, forms, and dashboards</li><li>Connects frontend and backend into a complete product</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What is a database and why it is needed</li><li>Tables, rows, columns, and records</li><li>Basic SQL concepts</li><li>Insert, update, delete, and fetch understanding</li><li>How backend interacts with database</li><li>Database thinking for projects</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 10</span><h3>What is a Stack? Full Stack Architecture Explained</h3></div>
+          <p>Many students hear terms like MERN, MEAN, Python Stack, Java Stack, or Full Stack Developer, but they often do not understand what these actually mean. This module gives clarity about how modern application architecture works.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why This Module Matters</h4><ul><li>Helps students understand roadmap direction</li><li>Removes confusion around trending tech names</li><li>Makes career planning easier</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What is a technology stack?</li><li>Frontend + Backend + Database workflow</li><li>What MERN / MEAN / Python / Java stack means</li><li>How a complete web app is structured</li><li>How developers build end-to-end applications</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 11</span><h3>Git, GitHub & Developer Tools</h3></div>
+          <p>Today companies do not hire developers only for writing code. They also expect them to know the tools used in real software workflows. Git and GitHub are essential because they help developers manage versions, collaborate, and maintain project history.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Learn Developer Tools?</h4><ul><li>Very important for internships and jobs</li><li>Used in team collaboration and project management</li><li>Makes students feel like real developers</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What is Git and why version control matters</li><li>GitHub basics and repository management</li><li>Push, pull, commit, branch understanding</li><li>VS Code extensions and developer setup</li><li>Browser DevTools and debugging basics</li><li>Developer workflow and code organization</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 12</span><h3>API Concepts & Modern Development Workflow</h3></div>
+          <p>APIs are one of the most important parts of modern development. They allow applications to send and receive data, connect services, and build real-world functionality like forms, dashboards, login, search, and more.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Learn APIs?</h4><ul><li>APIs are used in almost every real-world web application</li><li>Important for connecting frontend and backend</li><li>Helps students understand modern software systems</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>What is an API?</li><li>Request and response basics</li><li>Frontend and backend communication</li><li>JSON understanding</li><li>Using APIs in projects</li><li>Real-world use cases</li></ul></div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 13</span><h3>Projects, Portfolio & Deployment</h3></div>
+          <p>Nowadays students like courses more when they know they will build something real. Projects are extremely important because they help students practice, gain confidence, and show their work to recruiters or clients.</p>
+          <div class="module-columns">
+            <div class="module-box"><h4>Why Projects Matter</h4><ul><li>Projects build real confidence</li><li>Very useful for portfolio and job interviews</li><li>Important for internships, freelancing, and placements</li></ul></div>
+            <div class="module-box"><h4>Topics Covered</h4><ul><li>Mini websites and UI projects</li><li>Business and educational website projects</li><li>Form-based application concepts</li><li>Portfolio website creation</li><li>How to host and deploy a project</li><li>How to present projects professionally</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="careers">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Career Outcomes</span>
+        <h2>What Students Can Aim For After This Diploma</h2>
+        <p>This diploma helps students build a strong developer foundation that can support job roles, internships, freelancing, and future specialization in modern web technologies.</p>
+      </div>
+      <div class="career-grid">
+        <div class="career-card reveal"><h3>Possible Career Paths</h3><p>Students can prepare for roles like Frontend Developer, Web Developer, Junior Full Stack Developer, UI Developer, Website Designer, Intern Developer, and Freelance Website Creator.</p></div>
+        <div class="career-card reveal"><h3>Skills Students Build</h3><p>Students build coding logic, frontend design understanding, backend awareness, database concepts, developer workflow, project confidence, and modern web development thinking.</p></div>
+        <div class="career-card reveal"><h3>Who Should Join?</h3><p>This course is ideal for beginners, students after 12th or graduation, career changers, aspiring freelancers, and anyone who wants to enter the software development field with a clear roadmap.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Become a Job-Ready Developer with Nexvora Academy</h2>
+        <p>This diploma is designed to help students move from zero-level understanding to practical full stack development skills through structured learning, clear concepts, and real project building.</p>
+        <div style="margin-top: 24px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="index.html#enquiry" class="btn btn-primary">Enquire for Admission</a>
+          <a href="index.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
+          <h4>Nexvora Academy</h4>
+          <p>Learn practical IT skills through structured diploma programs designed for real career growth.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#modules">Syllabus</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="cloud-computing.html">Cloud Computing</a></li>
+            <li><a href="full-stack.html">Full Stack Development</a></li>
+            <li><a href="data-analytics.html">Data Analytics</a></li>
+            <li><a href="index.html#courses">More Courses</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: admissions@nexvoraacademy.com</li>
+            <li>Online Learning Platform</li>
+            <li>Admissions & Course Guidance</li>
+            <li>DM for Enrollment Details</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Nexvora Academy. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    const mobileToggle = document.createElement('button');
+    mobileToggle.className = 'mobile-toggle';
+    mobileToggle.innerHTML = '☰';
+    nav.appendChild(mobileToggle);
+
+    const navLinks = document.querySelector('.nav-links');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      mobileToggle.innerHTML = navLinks.classList.contains('show') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        mobileToggle.innerHTML = '☰';
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

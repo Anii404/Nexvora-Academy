@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexvora Academy | Learn Technology. Build Your Career.</title>
-  <meta name="description" content="Nexvora Academy offers career-focused diploma programs in Cloud Computing, Full Stack Development, Data Analytics, and Digital Marketing." />
+  <title>Diploma in Digital Marketing | Nexvora Academy</title>
+  <meta name="description" content="Join Nexvora Academy's Diploma in Digital Marketing and learn SEO, Social Media Marketing, Content Marketing, Paid Ads, Analytics, Branding, and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -143,17 +143,12 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 26px;
     }
 
     .nav-links a {
       color: var(--accent);
       font-weight: 600;
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--secondary);
     }
 
     .mobile-toggle {
@@ -169,18 +164,14 @@
     }
 
     .hero {
-      padding: 95px 0 75px;
+      padding: 90px 0 70px;
       background:
         radial-gradient(circle at top right, rgba(43,183,216,.18), transparent 26%),
         radial-gradient(circle at top left, rgba(24,59,107,.12), transparent 28%),
         linear-gradient(180deg,#ffffff 0%,#eef8fd 100%);
     }
 
-    .hero-grid,
-    .stats-grid,
-    .courses-grid,
-    .why-grid,
-    .footer-grid {
+    .hero-grid, .benefits-grid, .modules-grid, .careers-grid, .footer-grid {
       display: grid;
       gap: 28px;
     }
@@ -190,16 +181,15 @@
       align-items: center;
     }
 
-    .stats-grid {
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 40px;
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .courses-grid {
+    .modules-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .why-grid {
+    .careers-grid {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -221,7 +211,7 @@
     }
 
     .hero h2 {
-      font-size: clamp(38px, 6vw, 62px);
+      font-size: clamp(38px, 6vw, 60px);
       line-height: 1.08;
       color: var(--primary);
       margin-bottom: 18px;
@@ -241,11 +231,7 @@
       gap: 16px;
     }
 
-    .hero-panel,
-    .stat-card,
-    .course-card,
-    .why-card,
-    .cta-banner {
+    .hero-panel, .card, .module-card, .career-card, .cta-banner {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 30px;
@@ -261,67 +247,42 @@
 
     .hero-panel h3 {
       font-size: 32px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .hero-panel ul {
       list-style: none;
       display: grid;
-      gap: 14px;
+      gap: 12px;
       margin-top: 18px;
     }
 
     .hero-panel li {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: 18px;
       padding: 14px 16px;
       font-weight: 600;
     }
 
-    .stat-card {
-      text-align: center;
-      padding: 26px;
+    .card h3, .module-card h3, .career-card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 24px;
     }
 
-    .stat-card h3 {
-      font-size: 34px;
-      color: var(--secondary);
+    .card p, .module-card p, .career-card p {
+      color: var(--muted);
+    }
+
+    .module-card ul, .career-card ul {
+      margin-top: 14px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .module-card ul li, .career-card ul li {
       margin-bottom: 8px;
-    }
-
-    .stat-card p {
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .course-card h3,
-    .why-card h3 {
-      color: var(--primary);
-      margin-bottom: 14px;
-      font-size: 26px;
-    }
-
-    .course-card p,
-    .why-card p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .course-card .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .tag {
-      background: rgba(43,183,216,.10);
-      color: var(--primary);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
     }
 
     .cta-banner {
@@ -396,11 +357,7 @@
     }
 
     @media (max-width: 1100px) {
-      .hero-grid,
-      .stats-grid,
-      .courses-grid,
-      .why-grid,
-      .footer-grid {
+      .hero-grid, .benefits-grid, .modules-grid, .careers-grid, .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -442,104 +399,17 @@
         display: flex;
       }
 
-      .stats-grid,
-      .courses-grid,
-      .why-grid,
-      .footer-grid {
+      .benefits-grid, .modules-grid, .careers-grid, .footer-grid {
         grid-template-columns: 1fr;
       }
 
       .hero h2 { font-size: 38px; }
       .cta-banner { padding: 34px; }
     }
-	/* Floating Contact Buttons */
-.floating-contact-buttons {
-  position: fixed;
-  right: 18px;
-  bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  z-index: 9999;
-}
-
-.float-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-  transition: 0.3s ease;
-  animation: floatPulse 2.2s infinite;
-  min-width: 155px;
-}
-
-.float-btn span {
-  font-size: 22px;
-  line-height: 1;
-}
-
-.float-btn small {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.whatsapp-btn {
-  background: linear-gradient(135deg, #25D366, #128C7E);
-}
-
-.call-btn {
-  background: linear-gradient(135deg, #183b6b, #2bb7d8);
-}
-
-.float-btn:hover {
-  transform: translateY(-4px) scale(1.03);
-}
-
-@keyframes floatPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-  }
-  50% {
-    transform: scale(1.04);
-    box-shadow: 0 18px 36px rgba(0,0,0,0.24);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-  }
-}
-
-@media (max-width: 768px) {
-  .floating-contact-buttons {
-    right: 14px;
-    bottom: 16px;
-    gap: 12px;
-  }
-
-  .float-btn {
-    padding: 12px 16px;
-    min-width: 138px;
-  }
-
-  .float-btn span {
-    font-size: 20px;
-  }
-
-  .float-btn small {
-    font-size: 13px;
-  }
-}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="container">
       <nav>
@@ -561,18 +431,17 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="reveal">
-          <div class="hero-badge">🚀 Admissions Open for 2026</div>
-          <h2>Build Your Future with <span>Career-Focused Diploma Programs</span></h2>
+          <div class="hero-badge">📈 Diploma in Digital Marketing</div>
+          <h2>Build Your Career in <span>Digital Marketing</span></h2>
           <p>
-            Nexvora Academy is a modern online education institute designed to help students learn practical technology and digital skills with a strong career roadmap.
+            Learn practical digital marketing skills that help businesses grow online through SEO, social media, content, branding, paid ads, and analytics.
           </p>
           <p>
-            Explore industry-focused diploma programs in Cloud Computing, Full Stack Development, Data Analytics, and Digital Marketing.
+            This course is designed for students, job seekers, freelancers, business owners, and beginners who want to build a modern online career.
           </p>
 
           <div class="hero-actions">
@@ -582,177 +451,278 @@
         </div>
 
         <div class="hero-panel reveal">
-          <h3>Why Students Choose Nexvora Academy</h3>
+          <h3>What You Will Learn</h3>
           <ul>
-            <li>Practical Career-Focused Learning</li>
-            <li>Structured Diploma Programs</li>
-            <li>Industry-Relevant Skills</li>
-            <li>Beginner to Professional Roadmaps</li>
-            <li>Online Learning & Career Guidance</li>
+            <li>SEO & Google Search Basics</li>
+            <li>Social Media Marketing</li>
+            <li>Content Marketing Strategy</li>
+            <li>Paid Ads & Performance Marketing</li>
+            <li>Email Marketing & Branding</li>
+            <li>Analytics, Tracking & Projects</li>
           </ul>
         </div>
       </div>
-
-      <div class="stats-grid">
-        <div class="stat-card reveal">
-          <h3>4+</h3>
-          <p>Career Diploma Programs</p>
-        </div>
-        <div class="stat-card reveal">
-          <h3>100%</h3>
-          <p>Practical Learning Focus</p>
-        </div>
-        <div class="stat-card reveal">
-          <h3>Live</h3>
-          <p>Career-Oriented Roadmaps</p>
-        </div>
-        <div class="stat-card reveal">
-          <h3>Online</h3>
-          <p>Student-Friendly Learning</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Courses -->
-  <section id="courses">
-    <div class="container">
-      <div class="section-title reveal">
-        <span>Our Diploma Programs</span>
-        <h2>Choose the Right Course for Your Future</h2>
-        <p>
-          Our programs are designed to help students gain practical skills, understand real-world concepts, and build a stronger career foundation.
-        </p>
-      </div>
-
-      <div class="courses-grid">
-
-        <div class="course-card reveal">
-          <h3>Diploma in Cloud Computing</h3>
-          <p>
-            Learn modern IT infrastructure skills including hardware, operating systems, networking, CCNA 200-301, Linux, servers, AWS, Azure, and cloud concepts.
-          </p>
-          <div class="tags">
-            <span class="tag">Hardware</span>
-            <span class="tag">Networking</span>
-            <span class="tag">Linux</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Azure</span>
-          </div>
-          <a href="cloud-computing.html" class="btn btn-primary">View Course</a>
-        </div>
-
-        <div class="course-card reveal">
-          <h3>Diploma in Full Stack Development</h3>
-          <p>
-            Learn frontend, backend, databases, development tools, projects, and complete web application building from beginner to advanced level.
-          </p>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Backend</span>
-            <span class="tag">Database</span>
-          </div>
-          <a href="full-stack.html" class="btn btn-primary">View Course</a>
-        </div>
-
-        <div class="course-card reveal">
-          <h3>Diploma in Data Analytics</h3>
-          <p>
-            Learn how to work with data using Excel, SQL, Python, visualization, dashboards, and reporting to build a strong data career foundation.
-          </p>
-          <div class="tags">
-            <span class="tag">Excel</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">Dashboard</span>
-            <span class="tag">Analytics</span>
-          </div>
-          <a href="data-analytics.html" class="btn btn-primary">View Course</a>
-        </div>
-
-        <div class="course-card reveal">
-          <h3>Diploma in Digital Marketing</h3>
-          <p>
-            Learn SEO, social media marketing, branding, content strategy, paid ads, analytics, and digital growth skills used by modern businesses.
-          </p>
-          <div class="tags">
-            <span class="tag">SEO</span>
-            <span class="tag">Social Media</span>
-            <span class="tag">Content</span>
-            <span class="tag">Ads</span>
-            <span class="tag">Analytics</span>
-          </div>
-          <a href="digital-marketing.html" class="btn btn-primary">View Course</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Us -->
   <section>
     <div class="container">
       <div class="section-title reveal">
-        <span>Why Nexvora Academy</span>
-        <h2>Focused on Skills, Clarity & Career Growth</h2>
+        <span>Why Learn Digital Marketing</span>
+        <h2>A High-Demand Skill for the Modern Online World</h2>
         <p>
-          We aim to make technical learning easier, more structured, and more useful for students who want to build real careers.
+          Digital Marketing is one of the most useful career skills today because almost every business, startup, brand, creator, and company wants to grow online.
         </p>
       </div>
 
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <h3>Beginner Friendly</h3>
-          <p>
-            Our programs are structured to help students start from basics and move step-by-step toward advanced concepts.
-          </p>
+      <div class="benefits-grid">
+        <div class="card reveal">
+          <h3>Career Opportunities</h3>
+          <p>Students can build careers in SEO, social media, content creation, ads management, brand promotion, and online business growth.</p>
         </div>
 
-        <div class="why-card reveal">
-          <h3>Practical Learning</h3>
-          <p>
-            We focus on useful industry skills that help students understand how real technologies and digital tools are used.
-          </p>
+        <div class="card reveal">
+          <h3>Freelancing Potential</h3>
+          <p>This course is also useful for students who want to start freelancing or help businesses grow digitally.</p>
         </div>
 
-        <div class="why-card reveal">
-          <h3>Career Direction</h3>
-          <p>
-            Each diploma is designed to help students understand where the skill is used and how it can support future jobs or freelancing.
-          </p>
+        <div class="card reveal">
+          <h3>Business Growth Skills</h3>
+          <p>Students can use these skills to promote their own business, personal brand, startup, or online service.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Course Syllabus</span>
+        <h2>Detailed Digital Marketing Roadmap</h2>
+        <p>
+          This diploma program is structured in a step-by-step format so students can understand the field clearly and grow with confidence.
+        </p>
+      </div>
+
+      <div class="modules-grid">
+
+        <div class="module-card reveal">
+          <h3>Module 1: Computer & Internet Basics</h3>
+          <p>Understand the basics of computers, browsers, internet tools, email usage, and online working environments.</p>
+          <ul>
+            <li>Basic computer usage</li>
+            <li>Internet fundamentals</li>
+            <li>Browser tools</li>
+            <li>Search engines</li>
+            <li>Professional Gmail usage</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 2: Introduction to Digital Marketing</h3>
+          <p>Learn what digital marketing is, how businesses use it, and why it is important in today’s online world.</p>
+          <ul>
+            <li>What is Digital Marketing?</li>
+            <li>Traditional vs Digital Marketing</li>
+            <li>Marketing channels</li>
+            <li>Audience targeting basics</li>
+            <li>Business growth online</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 3: Website & Landing Page Basics</h3>
+          <p>Understand how websites and landing pages support digital campaigns and online lead generation.</p>
+          <ul>
+            <li>What is a website?</li>
+            <li>Domain & hosting basics</li>
+            <li>Landing pages</li>
+            <li>Lead generation concepts</li>
+            <li>Call-to-action understanding</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 4: Search Engine Optimization (SEO)</h3>
+          <p>Learn how websites rank on Google and how businesses get free organic traffic through SEO.</p>
+          <ul>
+            <li>What is SEO?</li>
+            <li>Keyword research basics</li>
+            <li>On-page SEO</li>
+            <li>Off-page SEO</li>
+            <li>Local SEO basics</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 5: Social Media Marketing (SMM)</h3>
+          <p>Learn how businesses use social media platforms to build audience, engagement, and brand awareness.</p>
+          <ul>
+            <li>Instagram marketing</li>
+            <li>Facebook marketing</li>
+            <li>LinkedIn basics</li>
+            <li>YouTube basics</li>
+            <li>Hashtag & engagement strategy</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 6: Content Marketing</h3>
+          <p>Understand how content is used to attract, educate, engage, and convert online audiences.</p>
+          <ul>
+            <li>Content strategy basics</li>
+            <li>Social media content</li>
+            <li>Blog writing basics</li>
+            <li>Content calendar</li>
+            <li>Educational vs promotional content</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 7: Graphic & Creative Marketing Basics</h3>
+          <p>Learn the role of visual creativity in branding, social media, ad creatives, and digital campaigns.</p>
+          <ul>
+            <li>Creative marketing basics</li>
+            <li>Branding concepts</li>
+            <li>Poster and social post planning</li>
+            <li>Visual consistency</li>
+            <li>Ad creative basics</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 8: Paid Ads / Performance Marketing</h3>
+          <p>Understand how businesses use paid ads to generate leads, traffic, and sales.</p>
+          <ul>
+            <li>Introduction to Meta Ads</li>
+            <li>Introduction to Google Ads</li>
+            <li>Campaign basics</li>
+            <li>Audience targeting</li>
+            <li>Lead generation campaigns</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 9: Email Marketing</h3>
+          <p>Learn how email marketing helps businesses communicate, nurture leads, and retain customers.</p>
+          <ul>
+            <li>Email marketing basics</li>
+            <li>Email list concepts</li>
+            <li>Promotional emails</li>
+            <li>Newsletter basics</li>
+            <li>Email writing basics</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 10: Analytics & Tracking</h3>
+          <p>Learn how marketers measure traffic, campaign performance, audience behavior, and conversions.</p>
+          <ul>
+            <li>Analytics basics</li>
+            <li>Campaign tracking</li>
+            <li>Clicks, CTR, leads</li>
+            <li>Conversion understanding</li>
+            <li>Performance reporting basics</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 11: Personal Branding & Freelancing</h3>
+          <p>Understand how to use digital marketing skills for personal growth, freelancing, and client work.</p>
+          <ul>
+            <li>Personal branding basics</li>
+            <li>LinkedIn profile growth</li>
+            <li>Freelancing opportunities</li>
+            <li>Client communication basics</li>
+            <li>Portfolio understanding</li>
+          </ul>
+        </div>
+
+        <div class="module-card reveal">
+          <h3>Module 12: Live Projects & Practical Training</h3>
+          <p>Apply your knowledge through practical tasks and mini-projects to build real confidence.</p>
+          <ul>
+            <li>Social media analysis</li>
+            <li>SEO practice basics</li>
+            <li>Content planning</li>
+            <li>Campaign strategy basics</li>
+            <li>Mini projects & final guidance</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Career Scope</span>
+        <h2>Career Opportunities After This Course</h2>
+        <p>
+          After completing this diploma, students can explore multiple beginner-friendly and growth-focused opportunities.
+        </p>
+      </div>
+
+      <div class="careers-grid">
+        <div class="career-card reveal">
+          <h3>Job Roles</h3>
+          <ul>
+            <li>Digital Marketing Executive</li>
+            <li>SEO Executive</li>
+            <li>Social Media Executive</li>
+            <li>Content Marketing Assistant</li>
+            <li>Ads / Campaign Assistant</li>
+          </ul>
+        </div>
+
+        <div class="career-card reveal">
+          <h3>Freelancing Roles</h3>
+          <ul>
+            <li>Freelance Social Media Manager</li>
+            <li>SEO Freelancer</li>
+            <li>Content Planner</li>
+            <li>Brand Promotion Assistant</li>
+            <li>Online Marketing Support</li>
+          </ul>
+        </div>
+
+        <div class="career-card reveal">
+          <h3>Who Should Join?</h3>
+          <ul>
+            <li>Students</li>
+            <li>Job Seekers</li>
+            <li>Business Owners</li>
+            <li>Freelancers</li>
+            <li>Content Creators</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container">
       <div class="cta-banner reveal">
-        <h2>Start Your Learning Journey with Nexvora Academy</h2>
+        <h2>Start Your Career in Digital Marketing</h2>
         <p>
-          Choose your course, understand your roadmap, and begin building the practical skills needed for today’s technology-driven world.
+          Learn practical online marketing skills with Nexvora Academy and build a future in one of today’s fastest-growing career fields.
         </p>
         <div style="margin-top:24px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-          <a href="admission.html" class="btn btn-primary">Apply Now</a>
+          <a href="admission.html" class="btn btn-primary">Apply for Admission</a>
           <a href="contact.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Talk to Us</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
           <h4>Nexvora Academy</h4>
-          <p>
-            Learn practical IT and digital skills through structured diploma programs designed for real career growth.
-          </p>
+          <p>Learn practical IT and digital skills through structured diploma programs designed for real career growth.</p>
         </div>
 
         <div>
@@ -787,7 +757,7 @@
       </div>
 
       <div class="footer-bottom">
-        © 2025 Nexvora Academy. All Rights Reserved.
+        © 2026 Nexvora Academy. All Rights Reserved.
       </div>
     </div>
   </footer>
@@ -821,22 +791,5 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
-<!-- Floating WhatsApp + Call Buttons -->
-<div class="floating-contact-buttons">
-  <a href="https://wa.me/917024964489?text=Hello%20Nexvora%20Academy%2C%20I%20want%20to%20know%20about%20your%20courses." 
-     class="float-btn whatsapp-btn" 
-     target="_blank" 
-     aria-label="Chat on WhatsApp">
-    <span>💬</span>
-    <small>WhatsApp</small>
-  </a>
-
-  <a href="tel:+917024964489" 
-     class="float-btn call-btn" 
-     aria-label="Call Now">
-    <span>📞</span>
-    <small>Call Now</small>
-  </a>
-</div>
 </body>
 </html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diploma in Cloud Computing | Nexvora Academy</title>
+  <meta name="description" content="Explore the Diploma in Cloud Computing at Nexvora Academy. Learn hardware, operating systems, networking, CCNA, Windows Server, Python, Linux, AWS, and Azure fundamentals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #183b6b;
+      --secondary: #2bb7d8;
+      --accent: #0f172a;
+      --light: #f4fbff;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #dbeafe;
+      --shadow: 0 18px 45px rgba(24, 59, 107, 0.12);
+      --radius: 24px;
+      --max: 1200px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f8fcff; color: var(--text); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(92%, var(--max)); margin: auto; }
+    section { padding: 88px 0; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 999px; font-weight: 700; transition: 0.3s ease; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--white); box-shadow: var(--shadow); }
+    .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+    .btn:hover { transform: translateY(-3px); }
+
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .section-title span { display: inline-block; color: var(--secondary); font-weight: 700; margin-bottom: 10px; text-transform: uppercase; font-size: 13px; }
+    .section-title h2 { font-size: clamp(30px, 5vw, 46px); color: var(--primary); margin-bottom: 14px; line-height: 1.15; }
+    .section-title p { max-width: 760px; margin: auto; color: var(--muted); font-size: 16px; }
+
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(219,234,254,0.8); }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; position: relative; }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; }
+    .logo-wrap img { width: 58px; height: 58px; object-fit: contain; border-radius: 16px; background: #fff; padding: 4px; }
+    .brand-text h1 { font-size: 22px; color: var(--primary); line-height: 1; }
+    .brand-text p { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { color: var(--accent); font-weight: 600; }
+    .mobile-toggle { display: none; width: 48px; height: 48px; border-radius: 14px; border: 1px solid var(--border); background: var(--white); font-size: 26px; color: var(--primary); cursor: pointer; }
+
+    .hero { padding: 90px 0 70px; background: radial-gradient(circle at top right, rgba(43,183,216,0.18), transparent 26%), radial-gradient(circle at top left, rgba(24,59,107,0.12), transparent 28%), linear-gradient(180deg, #ffffff 0%, #eef8fd 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 42px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(43,183,216,0.12); color: var(--secondary); padding: 10px 18px; border-radius: 999px; font-weight: 700; margin-bottom: 20px; font-size: 14px; }
+    .hero h2 { font-size: clamp(38px, 6vw, 60px); line-height: 1.08; color: var(--primary); margin-bottom: 18px; }
+    .hero h2 span { color: var(--secondary); }
+    .hero p { color: var(--muted); font-size: 17px; margin-bottom: 26px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+    .hero-panel { background: linear-gradient(145deg, #183b6b, #2bb7d8); border-radius: 34px; padding: 36px; color: var(--white); box-shadow: 0 25px 60px rgba(24,59,107,0.25); }
+    .hero-panel h3 { font-size: 32px; margin-bottom: 14px; }
+    .hero-panel ul { list-style: none; display: grid; gap: 12px; margin-top: 18px; }
+    .hero-panel li { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 14px 16px; font-weight: 600; }
+
+    .overview-grid, .career-grid, .footer-grid { display: grid; gap: 24px; }
+    .overview-grid { grid-template-columns: repeat(4,1fr); }
+    .career-grid { grid-template-columns: repeat(3,1fr); }
+    .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+
+    .overview-card, .career-card, .module-card, .enquiry-box { background: var(--white); border: 1px solid var(--border); border-radius: 28px; padding: 28px; box-shadow: var(--shadow); }
+    .overview-card h3, .career-card h3, .module-card h3, .enquiry-box h3 { color: var(--primary); margin-bottom: 12px; }
+    .overview-card p, .career-card p, .module-card p, .enquiry-box p { color: var(--muted); }
+
+    .module-section { background: linear-gradient(180deg,#f8fcff 0%,#eef7fb 100%); }
+    .module-stack { display: grid; gap: 22px; }
+    .module-card { padding: 34px; }
+    .module-card .module-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 18px; flex-wrap: wrap; }
+    .module-number { padding: 10px 16px; border-radius: 999px; background: rgba(43,183,216,0.12); color: var(--secondary); font-weight: 700; }
+    .module-card h3 { font-size: 30px; }
+    .module-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 18px; }
+    .module-box { background: var(--light); border-radius: 22px; padding: 22px; }
+    .module-box h4 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+    .module-box ul { padding-left: 18px; color: var(--text); display: grid; gap: 8px; }
+
+    .career-card ul { padding-left: 18px; display: grid; gap: 8px; margin-top: 12px; }
+
+    .cta-banner { background: linear-gradient(135deg, rgba(24,59,107,0.97), rgba(43,183,216,0.95)); color: var(--white); border-radius: 34px; padding: 52px; box-shadow: var(--shadow); text-align: center; }
+    .cta-banner h2 { font-size: clamp(30px, 5vw, 48px); margin-bottom: 14px; }
+    .cta-banner p { max-width: 780px; margin: auto; color: rgba(255,255,255,0.88); }
+
+    footer { background: #0f172a; color: #dbe4f0; padding: 80px 0 30px; margin-top: 30px; }
+    footer h4 { color: var(--white); margin-bottom: 18px; font-size: 20px; }
+    footer p, footer li, footer a { color: #cbd5e1; font-size: 15px; }
+    footer ul { list-style: none; display: grid; gap: 12px; }
+    .footer-brand img { width: 62px; height: 62px; border-radius: 16px; margin-bottom: 16px; background: #fff; padding: 4px; }
+    .footer-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #94a3b8; font-size: 14px; }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .overview-grid, .career-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      section { padding: 70px 0; }
+      .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links { position: absolute; top: 100%; left: 4%; right: 4%; background: rgba(255,255,255,0.98); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 24px; padding: 20px; flex-direction: column; align-items: flex-start; gap: 16px; display: none; }
+      .nav-links.show { display: flex; }
+      .overview-grid, .career-grid, .module-columns, .footer-grid { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 38px; }
+      .module-card h3 { font-size: 26px; }
+      .cta-banner { padding: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo-wrap">
+          <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
+          <div class="brand-text">
+            <h1>Nexvora Academy</h1>
+            <p>Learn Technology. Build Your Career.</p>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#modules">Syllabus</a>
+          <a href="#careers">Careers</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="hero-badge">☁️ Diploma Program | Cloud Computing</div>
+          <h2>Build Your Career in <span>Cloud Computing & IT Infrastructure</span></h2>
+          <p>This diploma program is designed for students who want to build strong technical knowledge from the foundation level and move toward high-demand careers in system administration, networking, Linux, server management, and cloud platforms like AWS.</p>
+          <p>Instead of teaching only theory, this course helps students understand how real IT systems work in companies — from hardware and operating systems to networking, servers, Linux, and cloud deployment concepts.</p>
+          <div class="hero-actions">
+            <a href="#modules" class="btn btn-primary">View Full Syllabus</a>
+            <a href="#contact" class="btn btn-outline">Enquire Now</a>
+          </div>
+        </div>
+        <div class="hero-panel reveal">
+          <h3>What You Will Learn</h3>
+          <ul>
+            <li>Hardware & Troubleshooting Fundamentals</li>
+            <li>Client Operating System & Desktop Support</li>
+            <li>Networking (N+) & CCNA 200-301 Concepts</li>
+            <li>Windows Server Administration</li>
+            <li>Python Basics for Technical Growth</li>
+            <li>Linux Administration & Command Line Skills</li>
+            <li>Cloud Computing with AWS + Azure Overview</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Course Overview</span>
+        <h2>Why Students Should Learn Cloud Computing</h2>
+        <p>Cloud Computing is not only about AWS or Azure. It starts with understanding how computers, operating systems, networks, servers, Linux, and cloud platforms work together in a real business environment.</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card reveal"><h3>Strong Foundation</h3><p>Students begin from the basics so they can understand IT infrastructure properly before moving to advanced cloud concepts.</p></div>
+        <div class="overview-card reveal"><h3>Career Growth</h3><p>This course supports roles related to IT support, networking, Linux, server administration, and cloud operations.</p></div>
+        <div class="overview-card reveal"><h3>Practical Thinking</h3><p>Students learn how different systems connect in real organizations, which improves technical understanding and confidence.</p></div>
+        <div class="overview-card reveal"><h3>Modern Skill Path</h3><p>The course connects traditional infrastructure knowledge with modern cloud platforms and automation-friendly thinking.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section" id="modules">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Detailed Syllabus</span>
+        <h2>What You Will Study in This Diploma</h2>
+        <p>Below is the detailed breakdown of the modules so students can clearly understand what they will learn and why each module matters for their career.</p>
+      </div>
+
+      <div class="module-stack">
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 1</span><h3>Hardware Fundamentals</h3></div>
+          <p>Hardware is the first step in understanding IT. If a student wants to work in cloud, networking, support, or system administration, they should first know how a computer system actually works from inside.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Hardware?</h4>
+              <ul>
+                <li>Builds technical confidence from the ground level</li>
+                <li>Helps students understand how systems are assembled and maintained</li>
+                <li>Useful for troubleshooting, support, and infrastructure roles</li>
+                <li>Creates a strong base before moving into server and cloud environments</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>Computer components and architecture</li>
+                <li>Motherboard, CPU, RAM, HDD, SSD, SMPS</li>
+                <li>Input/output devices and peripherals</li>
+                <li>BIOS/UEFI basics</li>
+                <li>Assembling and disassembling systems</li>
+                <li>Basic troubleshooting and maintenance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 2</span><h3>Client Operating System</h3></div>
+          <p>Students must understand how desktop and laptop operating systems are used in daily IT work. This module helps learners become comfortable with system setup, troubleshooting, and user-side technical support.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Client OS?</h4>
+              <ul>
+                <li>Useful for IT support and desktop administration jobs</li>
+                <li>Improves understanding of software, drivers, users, and permissions</li>
+                <li>Builds a practical base before learning servers and Linux</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>Windows installation and formatting</li>
+                <li>User accounts and system settings</li>
+                <li>Drivers, updates, and software installation</li>
+                <li>Control Panel and basic administration tools</li>
+                <li>Disk management and file systems</li>
+                <li>Common troubleshooting techniques</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 3</span><h3>Networking Fundamentals (N+ Level)</h3></div>
+          <p>Networking is one of the most important modules because cloud systems, servers, and infrastructure all depend on networks. Students will learn the logic behind how devices communicate in real environments.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Networking?</h4>
+              <ul>
+                <li>Required for cloud, Linux, server, and support roles</li>
+                <li>Helps students understand connectivity and troubleshooting</li>
+                <li>Builds a strong technical mindset for IT infrastructure</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>What is networking and how networks work</li>
+                <li>LAN, WAN, MAN and topologies</li>
+                <li>OSI Model and TCP/IP Model</li>
+                <li>IP addressing and subnetting basics</li>
+                <li>Switches, routers, cables, and wireless concepts</li>
+                <li>Ports, protocols, DNS, DHCP, and troubleshooting basics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 4</span><h3>CCNA 200-301</h3></div>
+          <p>This module gives students exposure to professional Cisco networking concepts. It helps learners move beyond networking basics and understand the enterprise-level side of networking and connectivity.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn CCNA?</h4>
+              <ul>
+                <li>Widely recognized networking knowledge path</li>
+                <li>Helpful for networking, support, and infrastructure roles</li>
+                <li>Improves confidence in network design and troubleshooting</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>Network fundamentals and Cisco basics</li>
+                <li>Switching concepts and VLAN understanding</li>
+                <li>Routing concepts and IP connectivity</li>
+                <li>Network access and IP services</li>
+                <li>Security fundamentals</li>
+                <li>Automation and programmability overview</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 5</span><h3>Server Operating System</h3></div>
+          <p>Servers are the backbone of most company environments. This module introduces students to enterprise server administration and how organizations manage users, systems, and services in centralized environments.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Server OS?</h4>
+              <ul>
+                <li>Important for system administration and infrastructure careers</li>
+                <li>Helps students understand centralized IT environments</li>
+                <li>Creates a direct bridge toward cloud administration concepts</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>Introduction to Windows Server</li>
+                <li>Active Directory basics</li>
+                <li>DNS and DHCP roles</li>
+                <li>Users, groups, and permissions</li>
+                <li>Group Policy concepts</li>
+                <li>Server roles and administrative tools</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 6</span><h3>Python Basics for IT Students</h3></div>
+          <p>Python is added so students do not remain limited to only support-level knowledge. Even basic coding improves logic, automation thinking, and future career opportunities in cloud, DevOps, and data roles.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Python?</h4>
+              <ul>
+                <li>Builds coding confidence for beginners</li>
+                <li>Useful for automation and scripting in modern IT roles</li>
+                <li>Supports future learning in cloud, DevOps, and analytics</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>Variables, data types, and operators</li>
+                <li>Conditions and loops</li>
+                <li>Functions and basic logic building</li>
+                <li>Lists, tuples, and dictionaries</li>
+                <li>Basic file handling</li>
+                <li>Simple scripting practice</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 7</span><h3>Linux Operating System</h3></div>
+          <p>Linux is one of the most valuable skills for students who want higher technical roles and better career opportunities. Many servers, cloud platforms, and production environments depend on Linux.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Linux?</h4>
+              <ul>
+                <li>Highly valuable for jobs in cloud, DevOps, servers, and hosting</li>
+                <li>Improves command-line confidence and system understanding</li>
+                <li>Often associated with better technical growth and salary potential</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>Linux installation and introduction</li>
+                <li>Basic commands and file navigation</li>
+                <li>Users, groups, and permissions</li>
+                <li>Package management and services</li>
+                <li>Process management and basic networking</li>
+                <li>Directory structure and administration basics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-card reveal">
+          <div class="module-top"><span class="module-number">Module 8</span><h3>Cloud Computing with AWS + Azure Introduction</h3></div>
+          <p>This is the core module where students connect all previous learning and understand how cloud platforms are used in modern companies. Students learn what cloud is, why companies use it, and how services are deployed and managed.</p>
+          <div class="module-columns">
+            <div class="module-box">
+              <h4>Why Learn Cloud Computing?</h4>
+              <ul>
+                <li>Cloud is one of the fastest-growing areas in IT</li>
+                <li>Companies are moving workloads to platforms like AWS and Azure</li>
+                <li>Cloud knowledge increases career opportunities in modern infrastructure roles</li>
+              </ul>
+            </div>
+            <div class="module-box">
+              <h4>Topics Covered</h4>
+              <ul>
+                <li>What is cloud computing and why it matters</li>
+                <li>Cloud service models: IaaS, PaaS, SaaS</li>
+                <li>Deployment models: Public, Private, Hybrid</li>
+                <li>AWS basics: IAM, EC2, S3, VPC, Security Groups</li>
+                <li>Storage, networking, and identity fundamentals</li>
+                <li>Azure overview and cloud platform comparison basics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="careers">
+    <div class="container">
+      <div class="section-title reveal">
+        <span>Career Outcomes</span>
+        <h2>What Students Can Aim For After This Course</h2>
+        <p>This diploma is designed to build strong fundamentals that can support entry-level to growth-focused technical career paths.</p>
+      </div>
+      <div class="career-grid">
+        <div class="career-card reveal"><h3>Possible Job Roles</h3><ul><li>IT Support Executive</li><li>Desktop Support Engineer</li><li>Network Support Engineer</li><li>System Support Associate</li><li>Linux Support Trainee</li><li>Cloud Support Beginner Roles</li></ul></div>
+        <div class="career-card reveal"><h3>Skills Students Build</h3><ul><li>Technical troubleshooting mindset</li><li>Networking and server understanding</li><li>Linux and cloud awareness</li><li>Practical system administration foundation</li><li>Confidence to learn advanced tools later</li></ul></div>
+        <div class="career-card reveal"><h3>Who Should Join?</h3><ul><li>Students after 12th / diploma / graduation</li><li>Beginners entering the IT field</li><li>Support professionals wanting growth</li><li>Learners interested in cloud and infrastructure</li><li>Anyone wanting a strong IT base before specialization</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Start Building Your Cloud Career with Nexvora Academy</h2>
+        <p>This program is designed to help students move from basic technical understanding to modern cloud-ready infrastructure knowledge through a clear, practical, and career-focused learning path.</p>
+        <div style="margin-top: 24px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="index.html#enquiry" class="btn btn-primary">Enquire for Admission</a>
+          <a href="index.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="Nexvora Academy logo.jpeg" alt="Nexvora Academy Logo">
+          <h4>Nexvora Academy</h4>
+          <p>Learn practical IT skills through structured diploma programs designed for real career growth.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#modules">Syllabus</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="cloud-computing.html">Cloud Computing</a></li>
+            <li><a href="full-stack.html">Full Stack Development</a></li>
+            <li><a href="data-analytics.html">Data Analytics</a></li>
+            <li><a href="index.html#courses">More Courses</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: admissions@nexvoraacademy.com</li>
+            <li>Online Learning Platform</li>
+            <li>Admissions & Course Guidance</li>
+            <li>DM for Enrollment Details</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Nexvora Academy. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    const mobileToggle = document.createElement('button');
+    mobileToggle.className = 'mobile-toggle';
+    mobileToggle.innerHTML = '☰';
+    nav.appendChild(mobileToggle);
+
+    const navLinks = document.querySelector('.nav-links');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      mobileToggle.innerHTML = navLinks.classList.contains('show') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        mobileToggle.innerHTML = '☰';
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
